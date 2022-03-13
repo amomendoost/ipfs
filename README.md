@@ -5,31 +5,36 @@
 </h1>
 
 
-<h3>Introdução</h3>
+<h3>Introduction</h3>
 
-Suba seus arquivos para a IPFS diretamente pelo Browser.
-Você pode escolher entre usar um node IPFS rodando localmente ou remotamente, portanto instalar um node IPFS é opcional.
+Upload your files to IPFS directly through the Browser.
+You can choose between using an IPFS node running locally or remotely, so installing an IPFS node is optional.
 
-Uma interface web simples e intituiva para a API [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client)
+A simple and intuitive web interface for the API [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client)
 
-As linguagens utilizadas aqui (javascript, html e css) se aplicam a qualquer servidor web, podem rodar tanto com node js, conforme segue o tutorial abaixo, como em outros. 
-Para rodar no apache e nginx, por exemplo, basta copiar os arquivos de dentro do diretório 
-[<strong>/public</strong>](https://github.com/anarkrypto/upload-files-to-ipfs-from-browser-panel/tree/master/public") para o diretório do seu servidor (por exemplo /var/www/html/).
+The languages used here (javascript, html and css) apply to any web server, we can run both with node js, as per the tutorial below, and with others.
+To run Apache in nginx, for example, just copy the files from within the directory
+
+[<strong>/public</strong>](https://github.com/anarkrypto/upload-files-to-ipfs-from-browser-panel/tree/master/public") for the directory of your server (por exemplo /var/www/html/).
 
   [<h2>Demo Online</h2>](https://anarkrypto.github.io/upload-files-to-ipfs-from-browser-panel/public)
   
+## uploaded file
+
+To access the uploaded file, replace the hash with this link:
+```
+https://ipfs.io/ipfs/#hash
+```
   
-  
-Você pode acessar o mesmo neste link. É o mesmo código, hospedado pelo Github Pages
+You can also access this link. The same code, hosted by Github Pages
 
+In case you decide to use an IPFS node running locally, name it [Setar or Cors](#Cors) correctly.
 
-Caso decida usar um node IPFS rodando localmente, lembre-se de [Setar o Cors](#Cors) corretamente.
+Otherwise you will have permission errors in the requisitions.
 
-Caso contrário terá erros de permissão nas requisiçôes.
+## Installing and running (node js):
 
-## Instalando e rodando (node js):
-
-Primeiramente resolva as dependências (git, npm e node js)
+First resolve the dependencies (git, npm and node js)
 
 Debian / Ubuntu:
 ```bash
@@ -44,14 +49,14 @@ Debian / Ubuntu:
   sudo apt install git
 ```
 
-Para verificar as versões instaladas:
+To check the installed versions:
 ```bash
 node -v
 npm -v
 git --version
 ```
 
-Instalando
+installing
 
 ```bash
 git clone https://github.com/anarkrypto/upload-files-to-ipfs-from-browser-panel.git
@@ -62,25 +67,25 @@ npm install
 ```
 
 
- Para iniciar o servidor localmente então,  (porta 3000 por padrão), digite no mesmo diretório:
+To start the server locally then, (port 3000 by default), type in the same directory:
 
 ```bash
 node app.js
 ```
 
-Se deu tudo certo, ele vai retornar algo como
+If everything went well, it will return something like
+
 ``` Server listening on https://localhost:3000 ```
 
-Então abra este endereço https://localhost:3000 no seu navegador e pronto! Já pode começar a enviar seus arquivos, a interface é intuitiva.
+Then open this address https://localhost:3000 in your browser and you're done! Now you can start uploading your files, the interface is intuitive.
 
-
-### Para rodar a API em um node IPFS localmente 
+### To run the API on an IPFS node locally
 
 
 Caso ainda não tenha instalado, siga os passos de instalação e configuração do node IPFS: [IPFS - Getting Started](https://ipfs.io/ipfs/Qme5m1hmmMbjdzcDeUC2LtHZxAABYtdmq5mBpvtBsC8VL5/docs/getting-started/)
 
 #### Cors
-Após isso, configure o CORS, com os seguintes comandos no seu terminal:
+After that, configure CORS, with the following commands in your terminal:
 
 ```bash
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
@@ -90,11 +95,11 @@ ipfs config --json API.HTTPHeaders.Access-Control-Expose-Headers '["Location"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials '["true"]'
 ```
 
-Inicie o node novamente
+Start node again
 ```bash
 ipfs daemon 
 ```
 
-Pronto! Seu node estará online localmente e pronto pra servir as requisições API. 
+Ready! Your node will be online locally and ready to serve API requests.
 
-Por padrão, o node IPFS roda a API em localhost:5001 (ou 127.0.0.1:5001). E o gateway na porta 8080.
+By default, the IPFS node runs the API at localhost:5001 (or 127.0.0.1:5001). And the gateway on port 8080.
