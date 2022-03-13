@@ -15,9 +15,9 @@ A simple and intuitive web interface for the API [js-ipfs-http-client](https://g
 The languages used here (javascript, html and css) apply to any web server, we can run both with node js, as per the tutorial below, and with others.
 To run Apache in nginx, for example, just copy the files from within the directory
 
-[<strong>/public</strong>](https://github.com/anarkrypto/upload-files-to-ipfs-from-browser-panel/tree/master/public") for the directory of your server (por exemplo /var/www/html/).
+[<strong>/public</strong>](amomendoost.github.io/ipfs/tree/master/public") for the directory of your server (por exemplo /var/www/html/).
 
-  [<h2>Demo Online</h2>](https://anarkrypto.github.io/upload-files-to-ipfs-from-browser-panel/public)
+  [<h2>Demo Online</h2>](https://amomendoost.github.io/ipfs/public/)
   
 ## uploaded file
 
